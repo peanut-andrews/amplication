@@ -58,6 +58,12 @@ export class AccountControllerBase {
       data: {
         ...data,
 
+        openShifts: data.openShifts
+          ? {
+              connect: data.openShifts,
+            }
+          : undefined,
+
         person: data.person
           ? {
               connect: data.person,
@@ -80,6 +86,12 @@ export class AccountControllerBase {
         id: true,
         isActive: true,
         isExcluded: true,
+
+        openShifts: {
+          select: {
+            id: true,
+          },
+        },
 
         person: {
           select: {
@@ -133,6 +145,12 @@ export class AccountControllerBase {
         id: true,
         isActive: true,
         isExcluded: true,
+
+        openShifts: {
+          select: {
+            id: true,
+          },
+        },
 
         person: {
           select: {
@@ -188,6 +206,12 @@ export class AccountControllerBase {
         isActive: true,
         isExcluded: true,
 
+        openShifts: {
+          select: {
+            id: true,
+          },
+        },
+
         person: {
           select: {
             id: true,
@@ -242,6 +266,12 @@ export class AccountControllerBase {
         data: {
           ...data,
 
+          openShifts: data.openShifts
+            ? {
+                connect: data.openShifts,
+              }
+            : undefined,
+
           person: data.person
             ? {
                 connect: data.person,
@@ -264,6 +294,12 @@ export class AccountControllerBase {
           id: true,
           isActive: true,
           isExcluded: true,
+
+          openShifts: {
+            select: {
+              id: true,
+            },
+          },
 
           person: {
             select: {
@@ -326,6 +362,12 @@ export class AccountControllerBase {
           id: true,
           isActive: true,
           isExcluded: true,
+
+          openShifts: {
+            select: {
+              id: true,
+            },
+          },
 
           person: {
             select: {

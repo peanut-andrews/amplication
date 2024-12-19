@@ -1,450 +1,2250 @@
 [
   {
-    "role": "user",
+    "role": "admin",
     "resource": "User",
     "action": "read:own",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "User",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "User",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "User",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "User",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "User",
     "action": "create:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "User",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "User",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "User",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "User",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "User",
     "action": "update:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "User",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "User",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "User",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "User",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "User",
     "action": "delete:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "User",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "User",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "User",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "User",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "User",
     "action": "read:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "User",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "User",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "User",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "User",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "GameBank",
     "action": "read:own",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "GameBank",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "GameBank",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "GameBank",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "GameBank",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "GameBank",
     "action": "create:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "GameBank",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "GameBank",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "GameBank",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "GameBank",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "GameBank",
     "action": "update:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "GameBank",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "GameBank",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "GameBank",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "GameBank",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "GameBank",
     "action": "delete:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "GameBank",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "GameBank",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "GameBank",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "GameBank",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "GameBank",
     "action": "read:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "GameBank",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "GameBank",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "GameBank",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "GameBank",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "FishBank",
     "action": "read:own",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "FishBank",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "FishBank",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "FishBank",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "FishBank",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "FishBank",
     "action": "create:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "FishBank",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "FishBank",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "FishBank",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "FishBank",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "FishBank",
     "action": "update:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "FishBank",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "FishBank",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "FishBank",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "FishBank",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "FishBank",
     "action": "delete:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "FishBank",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "FishBank",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "FishBank",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "FishBank",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "FishBank",
     "action": "read:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "FishBank",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "FishBank",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "FishBank",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "FishBank",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Person",
     "action": "read:own",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Person",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Person",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Person",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Person",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Person",
     "action": "create:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Person",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Person",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Person",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Person",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Person",
     "action": "update:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Person",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Person",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Person",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Person",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Person",
     "action": "delete:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Person",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Person",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Person",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Person",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Person",
     "action": "read:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Person",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Person",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Person",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Person",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "StatGame",
     "action": "read:own",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "StatGame",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "StatGame",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "StatGame",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "StatGame",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "StatGame",
     "action": "create:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "StatGame",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "StatGame",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "StatGame",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "StatGame",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "StatGame",
     "action": "update:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "StatGame",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "StatGame",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "StatGame",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "StatGame",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "StatGame",
     "action": "delete:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "StatGame",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "StatGame",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "StatGame",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "StatGame",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "StatGame",
     "action": "read:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "StatGame",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "StatGame",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "StatGame",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "StatGame",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "OpenShift",
     "action": "read:own",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "OpenShift",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "OpenShift",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "OpenShift",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "OpenShift",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "OpenShift",
     "action": "create:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "OpenShift",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "OpenShift",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "OpenShift",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "OpenShift",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "OpenShift",
     "action": "update:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "OpenShift",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "OpenShift",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "OpenShift",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "OpenShift",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "OpenShift",
     "action": "delete:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "OpenShift",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "OpenShift",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "OpenShift",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "OpenShift",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "OpenShift",
     "action": "read:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "OpenShift",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "OpenShift",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "OpenShift",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "OpenShift",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Statistic",
     "action": "read:own",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Statistic",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Statistic",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Statistic",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Statistic",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Statistic",
     "action": "create:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Statistic",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Statistic",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Statistic",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Statistic",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Statistic",
     "action": "update:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Statistic",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Statistic",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Statistic",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Statistic",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Statistic",
     "action": "delete:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Statistic",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Statistic",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Statistic",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Statistic",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Statistic",
     "action": "read:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Statistic",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Statistic",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Statistic",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Statistic",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Shop",
     "action": "read:own",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Shop",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Shop",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Shop",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Shop",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Shop",
     "action": "create:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Shop",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Shop",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Shop",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Shop",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Shop",
     "action": "update:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Shop",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Shop",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Shop",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Shop",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Shop",
     "action": "delete:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Shop",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Shop",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Shop",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Shop",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Shop",
     "action": "read:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Shop",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Shop",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Shop",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Shop",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Account",
     "action": "read:own",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Account",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Account",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Account",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Account",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Account",
     "action": "create:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Account",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Account",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Account",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Account",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Account",
     "action": "update:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Account",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Account",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Account",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Account",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Account",
     "action": "delete:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Account",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Account",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Account",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Account",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Account",
     "action": "read:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Account",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Account",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Account",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Account",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Product",
     "action": "read:own",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Product",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Product",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Product",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Product",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Product",
     "action": "create:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Product",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Product",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Product",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Product",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Product",
     "action": "update:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Product",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Product",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Product",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Product",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Product",
     "action": "delete:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Product",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Product",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Product",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Product",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Product",
     "action": "read:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Product",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Product",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Product",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Product",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "BalanceTransaction",
     "action": "read:own",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "BalanceTransaction",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "BalanceTransaction",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "BalanceTransaction",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "BalanceTransaction",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "BalanceTransaction",
     "action": "create:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "BalanceTransaction",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "BalanceTransaction",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "BalanceTransaction",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "BalanceTransaction",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "BalanceTransaction",
     "action": "update:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "BalanceTransaction",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "BalanceTransaction",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "BalanceTransaction",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "BalanceTransaction",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "BalanceTransaction",
     "action": "delete:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "BalanceTransaction",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "BalanceTransaction",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "BalanceTransaction",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "BalanceTransaction",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "BalanceTransaction",
     "action": "read:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "BalanceTransaction",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "BalanceTransaction",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "BalanceTransaction",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "BalanceTransaction",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Game",
     "action": "read:own",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Game",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Game",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Game",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Game",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Game",
     "action": "create:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Game",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Game",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Game",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Game",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Game",
     "action": "update:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Game",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Game",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Game",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Game",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Game",
     "action": "delete:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Game",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Game",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Game",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Game",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Game",
     "action": "read:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Game",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Game",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Game",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Game",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Bet",
     "action": "read:own",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Bet",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Bet",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Bet",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Bet",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Bet",
     "action": "create:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Bet",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Bet",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Bet",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Bet",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Bet",
     "action": "update:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Bet",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Bet",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Bet",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Bet",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Bet",
     "action": "delete:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Bet",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Bet",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Bet",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Bet",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Bet",
     "action": "read:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Bet",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Bet",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Bet",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Bet",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Message",
     "action": "read:own",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Message",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Message",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Message",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Message",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Message",
     "action": "create:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Message",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Message",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Message",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Message",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Message",
     "action": "update:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Message",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Message",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Message",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Message",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Message",
     "action": "delete:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Message",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Message",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Message",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Message",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Message",
     "action": "read:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Message",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Message",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Message",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Message",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Room",
     "action": "read:own",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Room",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Room",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Room",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Room",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Room",
     "action": "create:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Room",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Room",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Room",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Room",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Room",
     "action": "update:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Room",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Room",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Room",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Room",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
     "resource": "Room",
     "action": "delete:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "agent",
+    "resource": "Room",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Room",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Room",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
+    "resource": "Room",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Room",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "agent",
+    "resource": "Room",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "cashier",
+    "resource": "Room",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "operator",
+    "resource": "Room",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "player",
     "resource": "Room",
     "action": "read:any",
     "attributes": "*"

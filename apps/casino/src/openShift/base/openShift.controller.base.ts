@@ -49,11 +49,32 @@ export class OpenShiftControllerBase {
     @common.Body() data: OpenShiftCreateInput
   ): Promise<OpenShift> {
     return await this.service.createOpenShift({
-      data: data,
+      data: {
+        ...data,
+
+        cashier: data.cashier
+          ? {
+              connect: data.cashier,
+            }
+          : undefined,
+
+        shop: data.shop
+          ? {
+              connect: data.shop,
+            }
+          : undefined,
+      },
       select: {
         balance: true,
         balanceIn: true,
         balanceOut: true,
+
+        cashier: {
+          select: {
+            id: true,
+          },
+        },
+
         createdAt: true,
         deletedAt: true,
         endDate: true,
@@ -67,7 +88,13 @@ export class OpenShiftControllerBase {
         oldTotal: true,
         personId: true,
         persons: true,
-        shopId: true,
+
+        shop: {
+          select: {
+            id: true,
+          },
+        },
+
         startDate: true,
         transfers: true,
         updatedAt: true,
@@ -96,6 +123,13 @@ export class OpenShiftControllerBase {
         balance: true,
         balanceIn: true,
         balanceOut: true,
+
+        cashier: {
+          select: {
+            id: true,
+          },
+        },
+
         createdAt: true,
         deletedAt: true,
         endDate: true,
@@ -109,7 +143,13 @@ export class OpenShiftControllerBase {
         oldTotal: true,
         personId: true,
         persons: true,
-        shopId: true,
+
+        shop: {
+          select: {
+            id: true,
+          },
+        },
+
         startDate: true,
         transfers: true,
         updatedAt: true,
@@ -139,6 +179,13 @@ export class OpenShiftControllerBase {
         balance: true,
         balanceIn: true,
         balanceOut: true,
+
+        cashier: {
+          select: {
+            id: true,
+          },
+        },
+
         createdAt: true,
         deletedAt: true,
         endDate: true,
@@ -152,7 +199,13 @@ export class OpenShiftControllerBase {
         oldTotal: true,
         personId: true,
         persons: true,
-        shopId: true,
+
+        shop: {
+          select: {
+            id: true,
+          },
+        },
+
         startDate: true,
         transfers: true,
         updatedAt: true,
@@ -186,11 +239,32 @@ export class OpenShiftControllerBase {
     try {
       return await this.service.updateOpenShift({
         where: params,
-        data: data,
+        data: {
+          ...data,
+
+          cashier: data.cashier
+            ? {
+                connect: data.cashier,
+              }
+            : undefined,
+
+          shop: data.shop
+            ? {
+                connect: data.shop,
+              }
+            : undefined,
+        },
         select: {
           balance: true,
           balanceIn: true,
           balanceOut: true,
+
+          cashier: {
+            select: {
+              id: true,
+            },
+          },
+
           createdAt: true,
           deletedAt: true,
           endDate: true,
@@ -204,7 +278,13 @@ export class OpenShiftControllerBase {
           oldTotal: true,
           personId: true,
           persons: true,
-          shopId: true,
+
+          shop: {
+            select: {
+              id: true,
+            },
+          },
+
           startDate: true,
           transfers: true,
           updatedAt: true,
@@ -242,6 +322,13 @@ export class OpenShiftControllerBase {
           balance: true,
           balanceIn: true,
           balanceOut: true,
+
+          cashier: {
+            select: {
+              id: true,
+            },
+          },
+
           createdAt: true,
           deletedAt: true,
           endDate: true,
@@ -255,7 +342,13 @@ export class OpenShiftControllerBase {
           oldTotal: true,
           personId: true,
           persons: true,
-          shopId: true,
+
+          shop: {
+            select: {
+              id: true,
+            },
+          },
+
           startDate: true,
           transfers: true,
           updatedAt: true,

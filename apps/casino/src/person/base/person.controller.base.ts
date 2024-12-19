@@ -315,6 +315,12 @@ export class PersonControllerBase {
         isActive: true,
         isExcluded: true,
 
+        openShifts: {
+          select: {
+            id: true,
+          },
+        },
+
         person: {
           select: {
             id: true,

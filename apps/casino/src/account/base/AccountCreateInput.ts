@@ -25,6 +25,7 @@ import {
 
 import { BetCreateNestedManyWithoutAccountsInput } from "./BetCreateNestedManyWithoutAccountsInput";
 import { Type } from "class-transformer";
+import { OpenShiftWhereUniqueInput } from "../../openShift/base/OpenShiftWhereUniqueInput";
 import { PersonWhereUniqueInput } from "../../person/base/PersonWhereUniqueInput";
 import { IsJSONValue } from "../../validators";
 import { GraphQLJSON } from "graphql-type-json";
@@ -118,6 +119,18 @@ class AccountCreateInput {
     nullable: true,
   })
   isExcluded?: boolean | null;
+
+  @ApiProperty({
+    required: false,
+    type: () => OpenShiftWhereUniqueInput,
+  })
+  @ValidateNested()
+  @Type(() => OpenShiftWhereUniqueInput)
+  @IsOptional()
+  @Field(() => OpenShiftWhereUniqueInput, {
+    nullable: true,
+  })
+  openShifts?: OpenShiftWhereUniqueInput | null;
 
   @ApiProperty({
     required: false,

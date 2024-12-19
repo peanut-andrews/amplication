@@ -32,6 +32,7 @@ import { FishBank } from "../../fishBank/base/FishBank";
 import { GameBank } from "../../gameBank/base/GameBank";
 import { StatGame } from "../../statGame/base/StatGame";
 import { Game } from "../../game/base/Game";
+import { OpenShift } from "../../openShift/base/OpenShift";
 import { Product } from "../../product/base/Product";
 import { BalanceTransaction } from "../../balanceTransaction/base/BalanceTransaction";
 
@@ -199,6 +200,15 @@ class Shop {
     nullable: true,
   })
   name!: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: () => [OpenShift],
+  })
+  @ValidateNested()
+  @Type(() => OpenShift)
+  @IsOptional()
+  openShifts?: Array<OpenShift>;
 
   @ApiProperty({
     required: false,
