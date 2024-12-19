@@ -26,6 +26,7 @@ import {
 
 import { Bet } from "../../bet/base/Bet";
 import { Type } from "class-transformer";
+import { OpenShift } from "../../openShift/base/OpenShift";
 import { Person } from "../../person/base/Person";
 import { IsJSONValue } from "../../validators";
 import { GraphQLJSON } from "graphql-type-json";
@@ -132,6 +133,15 @@ class Account {
     nullable: true,
   })
   isExcluded!: boolean | null;
+
+  @ApiProperty({
+    required: false,
+    type: () => OpenShift,
+  })
+  @ValidateNested()
+  @Type(() => OpenShift)
+  @IsOptional()
+  openShifts?: OpenShift | null;
 
   @ApiProperty({
     required: false,

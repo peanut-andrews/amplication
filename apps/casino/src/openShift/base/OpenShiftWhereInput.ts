@@ -13,11 +13,13 @@ import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
 import { IntFilter } from "../../util/IntFilter";
 import { Type } from "class-transformer";
-import { IsOptional } from "class-validator";
+import { IsOptional, ValidateNested } from "class-validator";
+import { AccountWhereUniqueInput } from "../../account/base/AccountWhereUniqueInput";
 import { DateTimeFilter } from "../../util/DateTimeFilter";
 import { DateTimeNullableFilter } from "../../util/DateTimeNullableFilter";
 import { StringFilter } from "../../util/StringFilter";
 import { BooleanFilter } from "../../util/BooleanFilter";
+import { ShopWhereUniqueInput } from "../../shop/base/ShopWhereUniqueInput";
 import { JsonFilter } from "../../util/JsonFilter";
 
 @InputType()
@@ -54,6 +56,18 @@ class OpenShiftWhereInput {
     nullable: true,
   })
   balanceOut?: IntFilter;
+
+  @ApiProperty({
+    required: false,
+    type: () => AccountWhereUniqueInput,
+  })
+  @ValidateNested()
+  @Type(() => AccountWhereUniqueInput)
+  @IsOptional()
+  @Field(() => AccountWhereUniqueInput, {
+    nullable: true,
+  })
+  cashier?: AccountWhereUniqueInput;
 
   @ApiProperty({
     required: false,
@@ -200,14 +214,15 @@ class OpenShiftWhereInput {
 
   @ApiProperty({
     required: false,
-    type: StringFilter,
+    type: () => ShopWhereUniqueInput,
   })
-  @Type(() => StringFilter)
+  @ValidateNested()
+  @Type(() => ShopWhereUniqueInput)
   @IsOptional()
-  @Field(() => StringFilter, {
+  @Field(() => ShopWhereUniqueInput, {
     nullable: true,
   })
-  shopId?: StringFilter;
+  shop?: ShopWhereUniqueInput;
 
   @ApiProperty({
     required: false,

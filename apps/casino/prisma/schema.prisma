@@ -116,6 +116,8 @@ model OpenShift {
   balance        Int       @default(0)
   balanceIn      Int       @default(0)
   balanceOut     Int       @default(0)
+  cashier        Account?  @relation(fields: [cashierId], references: [id])
+  cashierId      String?   @unique
   createdAt      DateTime  @default(now())
   deletedAt      DateTime?
   endDate        DateTime?
@@ -129,7 +131,8 @@ model OpenShift {
   oldTotal       Int       @default(0)
   personId       String
   persons        Int       @default(0)
-  shopId         String
+  shop           Shop?     @relation(fields: [shopId], references: [id])
+  shopId         String?
   startDate      DateTime
   transfers      Int       @default(0)
   updatedAt      DateTime  @updatedAt
@@ -169,6 +172,7 @@ model Shop {
   isActive               Boolean?                         @default(true)
   isMfaRequired          Boolean?
   name                   String?                          @unique
+  openShifts             OpenShift[]
   product                Product[]
   shopSettingsId         String?
   tenantId               String?                          @unique
@@ -191,6 +195,7 @@ model Account {
   id                   String               @id @default(cuid())
   isActive             Boolean?             @default(false)
   isExcluded           Boolean?             @default(false)
+  openShifts           OpenShift?
   person               Person?              @relation(fields: [personId], references: [id])
   personId             String?
   personname           String

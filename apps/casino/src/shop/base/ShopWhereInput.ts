@@ -25,6 +25,7 @@ import { StatGameListRelationFilter } from "../../statGame/base/StatGameListRela
 import { GameListRelationFilter } from "../../game/base/GameListRelationFilter";
 import { StringFilter } from "../../util/StringFilter";
 import { BooleanNullableFilter } from "../../util/BooleanNullableFilter";
+import { OpenShiftListRelationFilter } from "../../openShift/base/OpenShiftListRelationFilter";
 import { ProductListRelationFilter } from "../../product/base/ProductListRelationFilter";
 import { BalanceTransactionListRelationFilter } from "../../balanceTransaction/base/BalanceTransactionListRelationFilter";
 import { DateTimeNullableFilter } from "../../util/DateTimeNullableFilter";
@@ -201,6 +202,18 @@ class ShopWhereInput {
     nullable: true,
   })
   name?: StringNullableFilter;
+
+  @ApiProperty({
+    required: false,
+    type: () => OpenShiftListRelationFilter,
+  })
+  @ValidateNested()
+  @Type(() => OpenShiftListRelationFilter)
+  @IsOptional()
+  @Field(() => OpenShiftListRelationFilter, {
+    nullable: true,
+  })
+  openShifts?: OpenShiftListRelationFilter;
 
   @ApiProperty({
     required: false,

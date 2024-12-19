@@ -31,6 +31,7 @@ import { FishBankWhereUniqueInput } from "../../fishBank/base/FishBankWhereUniqu
 import { GameBankWhereUniqueInput } from "../../gameBank/base/GameBankWhereUniqueInput";
 import { StatGameUpdateManyWithoutShopsInput } from "./StatGameUpdateManyWithoutShopsInput";
 import { GameUpdateManyWithoutShopsInput } from "./GameUpdateManyWithoutShopsInput";
+import { OpenShiftUpdateManyWithoutShopsInput } from "./OpenShiftUpdateManyWithoutShopsInput";
 import { ProductUpdateManyWithoutShopsInput } from "./ProductUpdateManyWithoutShopsInput";
 import { BalanceTransactionUpdateManyWithoutShopsInput } from "./BalanceTransactionUpdateManyWithoutShopsInput";
 
@@ -203,6 +204,18 @@ class ShopUpdateInput {
     nullable: true,
   })
   name?: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: () => OpenShiftUpdateManyWithoutShopsInput,
+  })
+  @ValidateNested()
+  @Type(() => OpenShiftUpdateManyWithoutShopsInput)
+  @IsOptional()
+  @Field(() => OpenShiftUpdateManyWithoutShopsInput, {
+    nullable: true,
+  })
+  openShifts?: OpenShiftUpdateManyWithoutShopsInput;
 
   @ApiProperty({
     required: false,

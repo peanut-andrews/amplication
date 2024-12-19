@@ -11,16 +11,21 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
+
 import {
   IsInt,
   Max,
-  IsDate,
+  ValidateNested,
   IsOptional,
+  IsDate,
   IsBoolean,
   IsString,
   MaxLength,
 } from "class-validator";
+
+import { AccountWhereUniqueInput } from "../../account/base/AccountWhereUniqueInput";
 import { Type } from "class-transformer";
+import { ShopWhereUniqueInput } from "../../shop/base/ShopWhereUniqueInput";
 import { IsJSONValue } from "../../validators";
 import { GraphQLJSON } from "graphql-type-json";
 import { InputJsonValue } from "../../types";
@@ -53,6 +58,18 @@ class OpenShiftCreateInput {
   @Max(99999999999)
   @Field(() => Number)
   balanceOut!: number;
+
+  @ApiProperty({
+    required: false,
+    type: () => AccountWhereUniqueInput,
+  })
+  @ValidateNested()
+  @Type(() => AccountWhereUniqueInput)
+  @IsOptional()
+  @Field(() => AccountWhereUniqueInput, {
+    nullable: true,
+  })
+  cashier?: AccountWhereUniqueInput | null;
 
   @ApiProperty({
     required: false,
@@ -157,13 +174,16 @@ class OpenShiftCreateInput {
   persons!: number;
 
   @ApiProperty({
-    required: true,
-    type: String,
+    required: false,
+    type: () => ShopWhereUniqueInput,
   })
-  @IsString()
-  @MaxLength(256)
-  @Field(() => String)
-  shopId!: string;
+  @ValidateNested()
+  @Type(() => ShopWhereUniqueInput)
+  @IsOptional()
+  @Field(() => ShopWhereUniqueInput, {
+    nullable: true,
+  })
+  shop?: ShopWhereUniqueInput | null;
 
   @ApiProperty({
     required: true,

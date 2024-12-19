@@ -71,10 +71,13 @@ class User {
   lastName!: string | null;
 
   @ApiProperty({
-    required: true,
+    required: false,
   })
   @IsJSONValue()
-  @Field(() => GraphQLJSON)
+  @IsOptional()
+  @Field(() => GraphQLJSON, {
+    nullable: true,
+  })
   roles!: JsonValue;
 
   @ApiProperty({

@@ -10,7 +10,13 @@ https://docs.amplication.com/how-to/custom-code
 ------------------------------------------------------------------------------
   */
 import { PrismaService } from "../../prisma/prisma.service";
-import { Prisma, OpenShift as PrismaOpenShift } from "@prisma/client";
+
+import {
+  Prisma,
+  OpenShift as PrismaOpenShift,
+  Account as PrismaAccount,
+  Shop as PrismaShop,
+} from "@prisma/client";
 
 export class OpenShiftServiceBase {
   constructor(protected readonly prisma: PrismaService) {}
@@ -45,5 +51,21 @@ export class OpenShiftServiceBase {
     args: Prisma.OpenShiftDeleteArgs
   ): Promise<PrismaOpenShift> {
     return this.prisma.openShift.delete(args);
+  }
+
+  async getCashier(parentId: string): Promise<PrismaAccount | null> {
+    return this.prisma.openShift
+      .findUnique({
+        where: { id: parentId },
+      })
+      .cashier();
+  }
+
+  async getShop(parentId: string): Promise<PrismaShop | null> {
+    return this.prisma.openShift
+      .findUnique({
+        where: { id: parentId },
+      })
+      .shop();
   }
 }

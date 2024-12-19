@@ -18,6 +18,7 @@ import {
   Bet as PrismaBet,
   StatGame as PrismaStatGame,
   Game as PrismaGame,
+  OpenShift as PrismaOpenShift,
   Product as PrismaProduct,
   BalanceTransaction as PrismaBalanceTransaction,
   FishBank as PrismaFishBank,
@@ -89,6 +90,17 @@ export class ShopServiceBase {
         where: { id: parentId },
       })
       .games(args);
+  }
+
+  async findOpenShifts(
+    parentId: string,
+    args: Prisma.OpenShiftFindManyArgs
+  ): Promise<PrismaOpenShift[]> {
+    return this.prisma.shop
+      .findUniqueOrThrow({
+        where: { id: parentId },
+      })
+      .openShifts(args);
   }
 
   async findProduct(

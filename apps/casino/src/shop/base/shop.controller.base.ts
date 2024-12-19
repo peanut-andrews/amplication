@@ -38,6 +38,9 @@ import { StatGameWhereUniqueInput } from "../../statGame/base/StatGameWhereUniqu
 import { GameFindManyArgs } from "../../game/base/GameFindManyArgs";
 import { Game } from "../../game/base/Game";
 import { GameWhereUniqueInput } from "../../game/base/GameWhereUniqueInput";
+import { OpenShiftFindManyArgs } from "../../openShift/base/OpenShiftFindManyArgs";
+import { OpenShift } from "../../openShift/base/OpenShift";
+import { OpenShiftWhereUniqueInput } from "../../openShift/base/OpenShiftWhereUniqueInput";
 import { ProductFindManyArgs } from "../../product/base/ProductFindManyArgs";
 import { Product } from "../../product/base/Product";
 import { ProductWhereUniqueInput } from "../../product/base/ProductWhereUniqueInput";
@@ -371,6 +374,12 @@ export class ShopControllerBase {
         id: true,
         isActive: true,
         isExcluded: true,
+
+        openShifts: {
+          select: {
+            id: true,
+          },
+        },
 
         person: {
           select: {
@@ -854,6 +863,132 @@ export class ShopControllerBase {
   ): Promise<void> {
     const data = {
       games: {
+        disconnect: body,
+      },
+    };
+    await this.service.updateShop({
+      where: params,
+      data,
+      select: { id: true },
+    });
+  }
+
+  @common.UseInterceptors(AclFilterResponseInterceptor)
+  @common.Get("/:id/openShifts")
+  @ApiNestedQuery(OpenShiftFindManyArgs)
+  @nestAccessControl.UseRoles({
+    resource: "OpenShift",
+    action: "read",
+    possession: "any",
+  })
+  async findOpenShifts(
+    @common.Req() request: Request,
+    @common.Param() params: ShopWhereUniqueInput
+  ): Promise<OpenShift[]> {
+    const query = plainToClass(OpenShiftFindManyArgs, request.query);
+    const results = await this.service.findOpenShifts(params.id, {
+      ...query,
+      select: {
+        balance: true,
+        balanceIn: true,
+        balanceOut: true,
+
+        cashier: {
+          select: {
+            id: true,
+          },
+        },
+
+        createdAt: true,
+        deletedAt: true,
+        endDate: true,
+        id: true,
+        isDeleted: true,
+        jpg: true,
+        lastBanks: true,
+        moneyIn: true,
+        moneyOut: true,
+        oldBanks: true,
+        oldTotal: true,
+        personId: true,
+        persons: true,
+
+        shop: {
+          select: {
+            id: true,
+          },
+        },
+
+        startDate: true,
+        transfers: true,
+        updatedAt: true,
+        welcomeBonuses: true,
+      },
+    });
+    if (results === null) {
+      throw new errors.NotFoundException(
+        `No resource was found for ${JSON.stringify(params)}`
+      );
+    }
+    return results;
+  }
+
+  @common.Post("/:id/openShifts")
+  @nestAccessControl.UseRoles({
+    resource: "Shop",
+    action: "update",
+    possession: "any",
+  })
+  async connectOpenShifts(
+    @common.Param() params: ShopWhereUniqueInput,
+    @common.Body() body: OpenShiftWhereUniqueInput[]
+  ): Promise<void> {
+    const data = {
+      openShifts: {
+        connect: body,
+      },
+    };
+    await this.service.updateShop({
+      where: params,
+      data,
+      select: { id: true },
+    });
+  }
+
+  @common.Patch("/:id/openShifts")
+  @nestAccessControl.UseRoles({
+    resource: "Shop",
+    action: "update",
+    possession: "any",
+  })
+  async updateOpenShifts(
+    @common.Param() params: ShopWhereUniqueInput,
+    @common.Body() body: OpenShiftWhereUniqueInput[]
+  ): Promise<void> {
+    const data = {
+      openShifts: {
+        set: body,
+      },
+    };
+    await this.service.updateShop({
+      where: params,
+      data,
+      select: { id: true },
+    });
+  }
+
+  @common.Delete("/:id/openShifts")
+  @nestAccessControl.UseRoles({
+    resource: "Shop",
+    action: "update",
+    possession: "any",
+  })
+  async disconnectOpenShifts(
+    @common.Param() params: ShopWhereUniqueInput,
+    @common.Body() body: OpenShiftWhereUniqueInput[]
+  ): Promise<void> {
+    const data = {
+      openShifts: {
         disconnect: body,
       },
     };

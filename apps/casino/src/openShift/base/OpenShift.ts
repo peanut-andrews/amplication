@@ -11,16 +11,21 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { ObjectType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
+
 import {
   IsInt,
   Max,
-  IsDate,
+  ValidateNested,
   IsOptional,
+  IsDate,
   IsString,
   IsBoolean,
   MaxLength,
 } from "class-validator";
+
+import { Account } from "../../account/base/Account";
 import { Type } from "class-transformer";
+import { Shop } from "../../shop/base/Shop";
 import { IsJSONValue } from "../../validators";
 import { GraphQLJSON } from "graphql-type-json";
 import { JsonValue } from "type-fest";
@@ -53,6 +58,15 @@ class OpenShift {
   @Max(99999999999)
   @Field(() => Number)
   balanceOut!: number;
+
+  @ApiProperty({
+    required: false,
+    type: () => Account,
+  })
+  @ValidateNested()
+  @Type(() => Account)
+  @IsOptional()
+  cashier?: Account | null;
 
   @ApiProperty({
     required: true,
@@ -173,13 +187,13 @@ class OpenShift {
   persons!: number;
 
   @ApiProperty({
-    required: true,
-    type: String,
+    required: false,
+    type: () => Shop,
   })
-  @IsString()
-  @MaxLength(256)
-  @Field(() => String)
-  shopId!: string;
+  @ValidateNested()
+  @Type(() => Shop)
+  @IsOptional()
+  shop?: Shop | null;
 
   @ApiProperty({
     required: true,

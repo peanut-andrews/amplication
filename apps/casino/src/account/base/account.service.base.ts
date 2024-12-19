@@ -16,6 +16,7 @@ import {
   Account as PrismaAccount,
   Bet as PrismaBet,
   BalanceTransaction as PrismaBalanceTransaction,
+  OpenShift as PrismaOpenShift,
   Person as PrismaPerson,
   Shop as PrismaShop,
 } from "@prisma/client";
@@ -65,6 +66,14 @@ export class AccountServiceBase {
         where: { id: parentId },
       })
       .transactions(args);
+  }
+
+  async getOpenShifts(parentId: string): Promise<PrismaOpenShift | null> {
+    return this.prisma.account
+      .findUnique({
+        where: { id: parentId },
+      })
+      .openShifts();
   }
 
   async getPerson(parentId: string): Promise<PrismaPerson | null> {

@@ -19,8 +19,8 @@ import { BetListRelationFilter } from "../../bet/base/BetListRelationFilter";
 import { DateTimeFilter } from "../../util/DateTimeFilter";
 import { StringNullableFilter } from "../../util/StringNullableFilter";
 import { BooleanNullableFilter } from "../../util/BooleanNullableFilter";
+import { OpenShiftWhereUniqueInput } from "../../openShift/base/OpenShiftWhereUniqueInput";
 import { PersonWhereUniqueInput } from "../../person/base/PersonWhereUniqueInput";
-import { JsonFilter } from "../../util/JsonFilter";
 import { FloatFilter } from "../../util/FloatFilter";
 import { ShopWhereUniqueInput } from "../../shop/base/ShopWhereUniqueInput";
 import { BalanceTransactionListRelationFilter } from "../../balanceTransaction/base/BalanceTransactionListRelationFilter";
@@ -140,6 +140,18 @@ class AccountWhereInput {
 
   @ApiProperty({
     required: false,
+    type: () => OpenShiftWhereUniqueInput,
+  })
+  @ValidateNested()
+  @Type(() => OpenShiftWhereUniqueInput)
+  @IsOptional()
+  @Field(() => OpenShiftWhereUniqueInput, {
+    nullable: true,
+  })
+  openShifts?: OpenShiftWhereUniqueInput;
+
+  @ApiProperty({
+    required: false,
     type: () => PersonWhereUniqueInput,
   })
   @ValidateNested()
@@ -160,17 +172,6 @@ class AccountWhereInput {
     nullable: true,
   })
   personname?: StringFilter;
-
-  @ApiProperty({
-    required: false,
-    type: JsonFilter,
-  })
-  @Type(() => JsonFilter)
-  @IsOptional()
-  @Field(() => JsonFilter, {
-    nullable: true,
-  })
-  role?: JsonFilter;
 
   @ApiProperty({
     required: false,
