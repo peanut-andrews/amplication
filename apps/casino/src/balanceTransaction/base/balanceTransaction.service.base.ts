@@ -19,6 +19,8 @@ import {
   Shop as PrismaShop,
 } from "@prisma/client";
 
+import { CreateDeposit } from "../CreateDeposit";
+
 export class BalanceTransactionServiceBase {
   constructor(protected readonly prisma: PrismaService) {}
 
@@ -76,5 +78,8 @@ export class BalanceTransactionServiceBase {
         where: { id: parentId },
       })
       .shop();
+  }
+  async CreateDeposit(args: CreateDeposit): Promise<boolean> {
+    throw new Error("Not implemented");
   }
 }
