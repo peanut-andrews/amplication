@@ -1,0 +1,30 @@
+import { SortOrder } from "../../util/SortOrder";
+
+export type BalanceTransactionOrderByInput = {
+  amount?: SortOrder;
+  bonusIdUsed?: SortOrder;
+  cashierAccountId?: SortOrder;
+  cashierAvatar?: SortOrder;
+  cashierId?: SortOrder;
+  cashiername?: SortOrder;
+  channel?: SortOrder;
+  createdAt?: SortOrder;
+  currency?: SortOrder;
+  direction?: SortOrder;
+  id?: SortOrder;
+  paymentMethod?: SortOrder;
+  personAvatar?: SortOrder;
+  personId?: SortOrder;
+  personname?: SortOrder;
+  playerAccountId?: SortOrder;
+  playerAccountBalanceAfterTransaction?: SortOrder;
+  productId?: SortOrder;
+  salesCommission?: SortOrder;
+  shopId?: SortOrder;
+  shopBalanceAfterTransaction?: SortOrder;
+  status?: SortOrder;
+  totalInCents?: SortOrder;
+  type?: SortOrder;
+  updateLevel?: SortOrder;
+  updatedAt?: SortOrder;
+};

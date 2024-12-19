@@ -1,0 +1,32 @@
+import { AccountUpdateManyWithoutShopsInput } from "./AccountUpdateManyWithoutShopsInput";
+import { BetUpdateManyWithoutShopsInput } from "./BetUpdateManyWithoutShopsInput";
+import { FishBankWhereUniqueInput } from "../fishBank/FishBankWhereUniqueInput";
+import { GameBankWhereUniqueInput } from "../gameBank/GameBankWhereUniqueInput";
+import { StatGameUpdateManyWithoutShopsInput } from "./StatGameUpdateManyWithoutShopsInput";
+import { GameUpdateManyWithoutShopsInput } from "./GameUpdateManyWithoutShopsInput";
+import { OpenShiftUpdateManyWithoutShopsInput } from "./OpenShiftUpdateManyWithoutShopsInput";
+import { ProductUpdateManyWithoutShopsInput } from "./ProductUpdateManyWithoutShopsInput";
+import { BalanceTransactionUpdateManyWithoutShopsInput } from "./BalanceTransactionUpdateManyWithoutShopsInput";
+
+export type ShopUpdateInput = {
+  acceptedPaymentMethods?: Array<"CASHAPP" | "INSTORE" | "VENMO" | "CRYPTO">;
+  accounts?: AccountUpdateManyWithoutShopsInput;
+  balance?: number;
+  bets?: BetUpdateManyWithoutShopsInput;
+  code?: string | null;
+  description?: string | null;
+  facialRecognition?: number | null;
+  fishBank?: FishBankWhereUniqueInput | null;
+  gameBank?: GameBankWhereUniqueInput | null;
+  gameStatsAccount?: StatGameUpdateManyWithoutShopsInput;
+  games?: GameUpdateManyWithoutShopsInput;
+  isActive?: boolean | null;
+  isMfaRequired?: boolean | null;
+  name?: string | null;
+  openShifts?: OpenShiftUpdateManyWithoutShopsInput;
+  product?: ProductUpdateManyWithoutShopsInput;
+  shopSettingsId?: string | null;
+  tenantId?: string | null;
+  transactions?: BalanceTransactionUpdateManyWithoutShopsInput;
+  url?: string | null;
+};

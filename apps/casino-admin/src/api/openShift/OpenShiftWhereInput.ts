@@ -1,0 +1,33 @@
+import { IntFilter } from "../../util/IntFilter";
+import { AccountWhereUniqueInput } from "../account/AccountWhereUniqueInput";
+import { DateTimeFilter } from "../../util/DateTimeFilter";
+import { DateTimeNullableFilter } from "../../util/DateTimeNullableFilter";
+import { StringFilter } from "../../util/StringFilter";
+import { BooleanFilter } from "../../util/BooleanFilter";
+import { ShopWhereUniqueInput } from "../shop/ShopWhereUniqueInput";
+import { JsonFilter } from "../../util/JsonFilter";
+
+export type OpenShiftWhereInput = {
+  balance?: IntFilter;
+  balanceIn?: IntFilter;
+  balanceOut?: IntFilter;
+  cashier?: AccountWhereUniqueInput;
+  createdAt?: DateTimeFilter;
+  deletedAt?: DateTimeNullableFilter;
+  endDate?: DateTimeNullableFilter;
+  id?: StringFilter;
+  isDeleted?: BooleanFilter;
+  jpg?: IntFilter;
+  lastBanks?: IntFilter;
+  moneyIn?: IntFilter;
+  moneyOut?: IntFilter;
+  oldBanks?: IntFilter;
+  oldTotal?: IntFilter;
+  personId?: StringFilter;
+  persons?: IntFilter;
+  shop?: ShopWhereUniqueInput;
+  startDate?: DateTimeFilter;
+  transfers?: IntFilter;
+  updatedAt?: DateTimeFilter;
+  welcomeBonuses?: JsonFilter;
+};
