@@ -1,0 +1,421 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DB_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  createdAt DateTime @default(now())
+  email     String?  @unique
+  firstName String?
+  id        String   @id @default(cuid())
+  lastName  String?
+  password  String
+  roles     Json
+  updatedAt DateTime @updatedAt
+  username  String   @unique
+}
+
+model GameBank {
+  bonus     Float
+  createdAt DateTime  @default(now())
+  deletedAt DateTime?
+  id        String    @id @default(cuid())
+  isDeleted Boolean   @default(false)
+  little    Float
+  shop      Shop      @relation(fields: [shopId], references: [id])
+  shopId    String    @unique
+  slots     Float
+  tableBank Float
+  tempRtp   Float
+  updatedAt DateTime  @updatedAt
+
+  @@map("game_bank")
+}
+
+model FishBank {
+  createdAt DateTime  @default(now())
+  deletedAt DateTime?
+  fish      Float
+  id        String    @id @default(cuid())
+  isDeleted Boolean   @default(false)
+  shop      Shop      @relation(fields: [shopId], references: [id])
+  shopId    String    @unique
+  updatedAt DateTime  @updatedAt
+
+  @@map("fish_bank")
+}
+
+model Person {
+  accounts           Account[]
+  activeAccountId    String?
+  activeShopId       String?
+  avatar             String?    @default("https://pykjixfuargqkjkgxsyc.supabase.co/storage/v1/object/public/avatars/avatar-37.webp")
+  cashtag            String?
+  createdAt          DateTime   @default(now())
+  deletedAt          DateTime?
+  email              String?    @unique @db.VarChar(100)
+  emailConfirmed     Boolean?   @default(false)
+  embeddings         Json       @default("[object Object]")
+  favorites          String     @default("[object Object]") @map("favorites") @db.VarChar(1000)
+  gameStats          StatGame[]
+  id                 String     @id @default(cuid())
+  isDeleted          Boolean    @default(false)
+  isFirstDeposit     Boolean?   @default(false) @map("is_first_deposit")
+  isSupended         Boolean?   @default(false)
+  lastSignInAt       DateTime?
+  messages           Message[]
+  password           String?    @db.VarChar(255)
+  personInfo         Json
+  personname         String?    @unique
+  phone              String?    @db.VarChar(100)
+  phoneConfirmed     Boolean?   @default(false)
+  resetPasswordToken String?    @db.VarChar(255)
+  updatedAt          DateTime   @updatedAt
+  vipLevel           Int?       @default(0)
+
+  @@map("persons")
+}
+
+model StatGame {
+  balance      Float
+  bet          Float
+  bonusBank    Float
+  createdAt    DateTime  @default(now())
+  dateTime     DateTime
+  deletedAt    DateTime?
+  denomination Float
+  fishBank     Float
+  gameBank     Float
+  gameItem     Game      @relation(fields: [gameId], references: [id])
+  gameId       String
+  id           String    @id @default(cuid())
+  inGame       Float
+  inJpg        Float
+  inProfit     Float
+  isDeleted    Boolean   @default(false)
+  jackBalance  Float
+  littleBank   Float
+  person       Person    @relation(fields: [personId], references: [id])
+  personId     String
+  shop         Shop      @relation(fields: [shopId], references: [id])
+  shopId       String
+  slotsBank    Float
+  tableBank    Float
+  totalBank    Float
+  updatedAt    DateTime  @updatedAt
+  win          Float
+
+  @@map("stat_game")
+}
+
+model OpenShift {
+  balance        Int       @default(0)
+  balanceIn      Int       @default(0)
+  balanceOut     Int       @default(0)
+  createdAt      DateTime  @default(now())
+  deletedAt      DateTime?
+  endDate        DateTime?
+  id             String    @id @default(cuid())
+  isDeleted      Boolean   @default(false)
+  jpg            Int       @default(0)
+  lastBanks      Int       @default(0)
+  moneyIn        Int       @default(0)
+  moneyOut       Int       @default(0)
+  oldBanks       Int       @default(0)
+  oldTotal       Int       @default(0)
+  personId       String
+  persons        Int       @default(0)
+  shopId         String
+  startDate      DateTime
+  transfers      Int       @default(0)
+  updatedAt      DateTime  @updatedAt
+  welcomeBonuses Json?
+}
+
+model Statistic {
+  createdAt          DateTime                        @default(now())
+  deletedAt          DateTime?
+  hhMultiplier       Float?                          @default(0)
+  id                 String                          @id @default(cuid())
+  isDeleted          Boolean                         @default(false)
+  payeerId           String
+  personId           String
+  sum                Int?                            @default(0)
+  title              String
+  total              Int?                            @default(0)
+  transactionChannel EnumStatisticTransactionChannel
+  typeField          String                          @map("type")
+  updatedAt          DateTime                        @updatedAt
+}
+
+model Shop {
+  acceptedPaymentMethods EnumShopAcceptedPaymentMethods[]
+  accounts               Account[]
+  balance                Int                              @default(0)
+  bets                   Bet[]
+  code                   String?                          @unique
+  createdAt              DateTime                         @default(now())
+  description            String?
+  facialRecognition      Int?                             @default(50)
+  fishBank               FishBank?
+  gameBank               GameBank?
+  gameStatsAccount       StatGame[]
+  games                  Game[]
+  id                     String                           @id @default(cuid())
+  isActive               Boolean?                         @default(true)
+  isMfaRequired          Boolean?
+  name                   String?                          @unique
+  product                Product[]
+  shopSettingsId         String?
+  tenantId               String?                          @unique
+  transactions           BalanceTransaction[]
+  updatedAt              DateTime?                        @updatedAt
+  url                    String?                          @unique
+
+  @@index([name])
+  @@map("shops")
+}
+
+model Account {
+  avatar               String
+  balance              Int                  @default(0)
+  bets                 Bet[]
+  countBalance         Int                  @default(0)
+  createdAt            DateTime             @default(now())
+  currency             String?              @default("USD")
+  faceVerificationTime String?
+  id                   String               @id @default(cuid())
+  isActive             Boolean?             @default(false)
+  isExcluded           Boolean?             @default(false)
+  person               Person?              @relation(fields: [personId], references: [id])
+  personId             String?
+  personname           String
+  role                 Json
+  rtp                  Float                @default(0)
+  shop                 Shop?                @relation(fields: [shopId], references: [id])
+  shopId               String?
+  totalBonusWon        Int                  @default(0)
+  totalCashIn          String?              @default("0")
+  totalCashOut         String?              @default("0")
+  totalLost            Int                  @default(0)
+  totalWon             Int                  @default(0)
+  transactions         BalanceTransaction[]
+  updatedAt            DateTime             @updatedAt
+
+  @@index([currency])
+  @@index([isExcluded])
+  @@index([personId])
+  @@map("accounts")
+}
+
+model Product {
+  amountToReceiveInCents Int                  @default(0)
+  bonusCode              String?              @default("")
+  bonusSpins             Int?
+  bonusTotalInCents      Int?                 @default(0)
+  createdAt              DateTime?            @default(now()) @map("created_at") @db.Timestamptz(6)
+  description            String
+  discountInCents        Int                  @default(0)
+  id                     String               @id @unique @default(cuid())
+  isPromo                Boolean?             @default(false)
+  priceInCents           Int                  @default(0)
+  shop                   Shop?                @relation(fields: [shopId], references: [id])
+  shopId                 String?
+  shopTransaction        BalanceTransaction[]
+  title                  String
+  totalDiscountInCents   Int
+  typeField              String               @map("type")
+  url                    String
+
+  @@map("products")
+}
+
+model BalanceTransaction {
+  amount                               Int
+  bonusIdUsed                          String                              @default("none")
+  cashierAccountId                     String
+  cashierAvatar                        String
+  cashierId                            String
+  cashiername                          String
+  channel                              EnumBalanceTransactionChannel
+  createdAt                            DateTime                            @default(now())
+  currency                             String                              @default("USD")
+  direction                            EnumBalanceTransactionDirection
+  id                                   String                              @id @unique @default(cuid())
+  paymentMethod                        EnumBalanceTransactionPaymentMethod @default(CASHAPP)
+  personAvatar                         String
+  personId                             String
+  personname                           String
+  playerAccount                        Account                             @relation(fields: [playerAccountId], references: [id])
+  playerAccountId                      String
+  playerAccountBalanceAfterTransaction Int?
+  product                              Product                             @relation(fields: [productId], references: [id])
+  productId                            String
+  salesCommission                      Int?                                @default(0)
+  shop                                 Shop                                @relation(fields: [shopId], references: [id])
+  shopId                               String
+  shopBalanceAfterTransaction          Int?
+  status                               EnumBalanceTransactionStatus        @default(PENDING_PAYMENT)
+  totalInCents                         Int
+  type                                 EnumBalanceTransactionType
+  updateLevel                          Boolean                             @default(false)
+  updatedAt                            DateTime                            @updatedAt
+}
+
+model Game {
+  advanced                     String?    @default("0")
+  bet                          Float?     @default(0)
+  bets                         Bet[]
+  bids                         Int?       @default(0)
+  cask                         Float?     @default(0)
+  categoryId                   String?
+  categoryTemp                 Float?     @default(0) @map("category_temp")
+  chanceFirepot1               Float?
+  chanceFirepot2               Float?
+  chanceFirepot3               Float?
+  createdAt                    Float?     @default(0) @map("created_at")
+  currentRtp                   Float?     @default(0) @map("current_rtp")
+  denomination                 Float?     @default(1)
+  developer                    String?
+  device                       Int        @default(1)
+  featured                     Boolean?   @default(false)
+  fireCount1                   Float?
+  fireCount2                   Float?
+  fireCount3                   Float?
+  gamebank                     String?    @default("slots")
+  id                           String     @id @default(cuid())
+  isActive                     Boolean?   @default(false)
+  jackpotGroupId               String?
+  jpgId                        Int        @default(0) @map("jpg_id")
+  linesPercentConfigBonus      String?    @map("lines_percent_config_bonus")
+  linesPercentConfigBonusBonus String?    @map("lines_percent_config_bonus_bonus")
+  linesPercentConfigSpin       String?    @map("lines_percent_config_spin")
+  linesPercentConfigSpinBonus  String?    @map("lines_percent_config_spin_bonus")
+  name                         String
+  originalId                   Int?       @default(0) @map("original_id")
+  popularity                   Float?     @default(0)
+  providerId                   String?
+  rezerv                       Float?     @default(0)
+  rtpStatIn                    Float?     @default(0) @map("rtp_stat_in")
+  rtpStatOut                   Float?     @default(0) @map("rtp_stat_out")
+  scaleMode                    String     @default("1")
+  shop                         Shop?      @relation(fields: [shopId], references: [id])
+  shopId                       String?
+  slotViewState                String     @default("0")
+  standardRtp                  Float?     @default(0) @map("standard_rtp")
+  statIn                       Float?     @default(0) @map("stat_in")
+  statOut                      Float?     @default(0) @map("stat_out")
+  stats                        StatGame[]
+  title                        String
+  updatedAt                    DateTime?  @default(dbgenerated("current_timestamp")) @map("updated_at")
+  view                         Int?       @default(0)
+  vipLevel                     Int?       @default(0) @map("vip_level")
+
+  @@map("games")
+}
+
+model Bet {
+  account    Account? @relation(fields: [accountId], references: [id])
+  accountId  String?
+  betAmount  Int
+  createdAt  DateTime @default(now())
+  currency   String   @default("USDT")
+  game       Game?    @relation(fields: [gameId], references: [id])
+  gameId     String?
+  id         String   @id @default(cuid())
+  multiplier Float
+  shop       Shop?    @relation(fields: [shopId], references: [id])
+  shopId     String?
+  updatedAt  DateTime @updatedAt
+  winAmount  Int
+
+  @@map("bets")
+}
+
+model Message {
+  createdAt DateTime @default(now()) @map("created_at")
+  id        String   @id @default(cuid())
+  person    Person?  @relation(fields: [personId], references: [id])
+  personId  String?
+  room      Room?    @relation(fields: [roomId], references: [id])
+  roomId    String?
+  text      String
+  typeField String?  @default("room") @map("type")
+
+  @@map("messages")
+}
+
+model Room {
+  createdAt    DateTime  @default(now()) @map("created_at")
+  hash         String?
+  id           String    @id @default(cuid())
+  messages     Message[]
+  name         String    @unique
+  ownerId      String?
+  privateField Boolean   @default(false) @map("private")
+
+  @@map("rooms")
+}
+
+enum EnumStatisticTransactionChannel {
+  CASHAPP
+  INSTORE
+  VENMO
+  CRYPTO
+}
+
+enum EnumShopAcceptedPaymentMethods {
+  CASHAPP
+  INSTORE
+  VENMO
+  CRYPTO
+}
+
+enum EnumBalanceTransactionChannel {
+  WALLET
+  COINBASE
+  BTCPAYSERVER
+  CASHAPP
+  INSTORE
+  PINCODE
+}
+
+enum EnumBalanceTransactionDirection {
+  ADD
+  OUT
+}
+
+enum EnumBalanceTransactionPaymentMethod {
+  CASHAPP
+  INSTORE
+  VENMO
+  CRYPTO
+}
+
+enum EnumBalanceTransactionStatus {
+  PENDING_PAYMENT
+  PAYMENT_FAILED
+  EXPIRED
+  CANCELLED_BY_PLAYER
+  CANCELLED_BY_SHOP
+  CANCELLED_BY_SYSTEM
+  SUCCEEDED
+}
+
+enum EnumBalanceTransactionType {
+  INVITE
+  PROGRESS
+  TOURNAMENT
+  DAILY_ENTRY
+  REFUND
+  WELCOME_BONUS
+  SMS_BONUS
+  WHEEL_FORTUNE
+  CASH_OUT
+  RETAIL_PAYMENT
+  DEPOSIT
+}
