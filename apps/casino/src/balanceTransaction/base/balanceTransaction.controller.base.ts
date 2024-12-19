@@ -26,6 +26,7 @@ import { BalanceTransaction } from "./BalanceTransaction";
 import { BalanceTransactionFindManyArgs } from "./BalanceTransactionFindManyArgs";
 import { BalanceTransactionWhereUniqueInput } from "./BalanceTransactionWhereUniqueInput";
 import { BalanceTransactionUpdateInput } from "./BalanceTransactionUpdateInput";
+import { CreateDeposit } from "../CreateDeposit";
 
 @swagger.ApiBearerAuth()
 @common.UseGuards(defaultAuthGuard.DefaultAuthGuard, nestAccessControl.ACGuard)
@@ -415,5 +416,22 @@ export class BalanceTransactionControllerBase {
       }
       throw error;
     }
+  }
+
+  @common.Post("/:id/deposit")
+  @swagger.ApiOkResponse({
+    type: Boolean,
+  })
+  @swagger.ApiNotFoundResponse({
+    type: errors.NotFoundException,
+  })
+  @swagger.ApiForbiddenResponse({
+    type: errors.ForbiddenException,
+  })
+  async CreateDeposit(
+    @common.Body()
+    body: CreateDeposit
+  ): Promise<boolean> {
+    return this.service.CreateDeposit(body);
   }
 }
