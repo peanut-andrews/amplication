@@ -1,7 +1,10 @@
+import { ArgsType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
 import { Type } from "class-transformer";
 
+@ArgsType()
 class CreateDeposit {
+    @Field(() => String)
     @ApiProperty({
         required: true,
         type: () => String
@@ -9,6 +12,7 @@ class CreateDeposit {
     @Type(() => String)
     playerId!: string;
 
+    @Field(() => String)
     @ApiProperty({
         required: true,
         type: () => String
@@ -16,6 +20,7 @@ class CreateDeposit {
     @Type(() => String)
     cashierId!: string;
 
+    @Field(() => String)
     @ApiProperty({
         required: true,
         type: () => String

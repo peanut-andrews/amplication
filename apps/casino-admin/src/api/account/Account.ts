@@ -1,0 +1,32 @@
+import { Bet } from "../bet/Bet";
+import { OpenShift } from "../openShift/OpenShift";
+import { Person } from "../person/Person";
+import { JsonValue } from "type-fest";
+import { Shop } from "../shop/Shop";
+import { BalanceTransaction } from "../balanceTransaction/BalanceTransaction";
+
+export type Account = {
+  avatar: string;
+  balance: number;
+  bets?: Array<Bet>;
+  countBalance: number;
+  createdAt: Date;
+  currency: string | null;
+  faceVerificationTime: string | null;
+  id: string;
+  isActive: boolean | null;
+  isExcluded: boolean | null;
+  openShifts?: OpenShift | null;
+  person?: Person | null;
+  personname: string;
+  role: JsonValue;
+  rtp: number;
+  shop?: Shop | null;
+  totalBonusWon: number;
+  totalCashIn: string | null;
+  totalCashOut: string | null;
+  totalLost: number;
+  totalWon: number;
+  transactions?: Array<BalanceTransaction>;
+  updatedAt: Date;
+};

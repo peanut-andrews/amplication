@@ -1,0 +1,36 @@
+import { StringFilter } from "../../util/StringFilter";
+import { IntFilter } from "../../util/IntFilter";
+import { BetListRelationFilter } from "../bet/BetListRelationFilter";
+import { DateTimeFilter } from "../../util/DateTimeFilter";
+import { StringNullableFilter } from "../../util/StringNullableFilter";
+import { BooleanNullableFilter } from "../../util/BooleanNullableFilter";
+import { OpenShiftWhereUniqueInput } from "../openShift/OpenShiftWhereUniqueInput";
+import { PersonWhereUniqueInput } from "../person/PersonWhereUniqueInput";
+import { FloatFilter } from "../../util/FloatFilter";
+import { ShopWhereUniqueInput } from "../shop/ShopWhereUniqueInput";
+import { BalanceTransactionListRelationFilter } from "../balanceTransaction/BalanceTransactionListRelationFilter";
+
+export type AccountWhereInput = {
+  avatar?: StringFilter;
+  balance?: IntFilter;
+  bets?: BetListRelationFilter;
+  countBalance?: IntFilter;
+  createdAt?: DateTimeFilter;
+  currency?: StringNullableFilter;
+  faceVerificationTime?: StringNullableFilter;
+  id?: StringFilter;
+  isActive?: BooleanNullableFilter;
+  isExcluded?: BooleanNullableFilter;
+  openShifts?: OpenShiftWhereUniqueInput;
+  person?: PersonWhereUniqueInput;
+  personname?: StringFilter;
+  rtp?: FloatFilter;
+  shop?: ShopWhereUniqueInput;
+  totalBonusWon?: IntFilter;
+  totalCashIn?: StringNullableFilter;
+  totalCashOut?: StringNullableFilter;
+  totalLost?: IntFilter;
+  totalWon?: IntFilter;
+  transactions?: BalanceTransactionListRelationFilter;
+  updatedAt?: DateTimeFilter;
+};

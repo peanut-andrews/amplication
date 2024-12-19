@@ -1,0 +1,35 @@
+import { FloatFilter } from "../../util/FloatFilter";
+import { DateTimeFilter } from "../../util/DateTimeFilter";
+import { DateTimeNullableFilter } from "../../util/DateTimeNullableFilter";
+import { GameWhereUniqueInput } from "../game/GameWhereUniqueInput";
+import { StringFilter } from "../../util/StringFilter";
+import { BooleanFilter } from "../../util/BooleanFilter";
+import { PersonWhereUniqueInput } from "../person/PersonWhereUniqueInput";
+import { ShopWhereUniqueInput } from "../shop/ShopWhereUniqueInput";
+
+export type StatGameWhereInput = {
+  balance?: FloatFilter;
+  bet?: FloatFilter;
+  bonusBank?: FloatFilter;
+  createdAt?: DateTimeFilter;
+  dateTime?: DateTimeFilter;
+  deletedAt?: DateTimeNullableFilter;
+  denomination?: FloatFilter;
+  fishBank?: FloatFilter;
+  gameBank?: FloatFilter;
+  gameItem?: GameWhereUniqueInput;
+  id?: StringFilter;
+  inGame?: FloatFilter;
+  inJpg?: FloatFilter;
+  inProfit?: FloatFilter;
+  isDeleted?: BooleanFilter;
+  jackBalance?: FloatFilter;
+  littleBank?: FloatFilter;
+  person?: PersonWhereUniqueInput;
+  shop?: ShopWhereUniqueInput;
+  slotsBank?: FloatFilter;
+  tableBank?: FloatFilter;
+  totalBank?: FloatFilter;
+  updatedAt?: DateTimeFilter;
+  win?: FloatFilter;
+};

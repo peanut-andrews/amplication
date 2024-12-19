@@ -1,0 +1,35 @@
+import { Account } from "../account/Account";
+import { Bet } from "../bet/Bet";
+import { FishBank } from "../fishBank/FishBank";
+import { GameBank } from "../gameBank/GameBank";
+import { StatGame } from "../statGame/StatGame";
+import { Game } from "../game/Game";
+import { OpenShift } from "../openShift/OpenShift";
+import { Product } from "../product/Product";
+import { BalanceTransaction } from "../balanceTransaction/BalanceTransaction";
+
+export type Shop = {
+  acceptedPaymentMethods?: Array<"CASHAPP" | "INSTORE" | "VENMO" | "CRYPTO">;
+  accounts?: Array<Account>;
+  balance: number;
+  bets?: Array<Bet>;
+  code: string | null;
+  createdAt: Date;
+  description: string | null;
+  facialRecognition: number | null;
+  fishBank?: FishBank | null;
+  gameBank?: GameBank | null;
+  gameStatsAccount?: Array<StatGame>;
+  games?: Array<Game>;
+  id: string;
+  isActive: boolean | null;
+  isMfaRequired: boolean | null;
+  name: string | null;
+  openShifts?: Array<OpenShift>;
+  product?: Array<Product>;
+  shopSettingsId: string | null;
+  tenantId: string | null;
+  transactions?: Array<BalanceTransaction>;
+  updatedAt: Date | null;
+  url: string | null;
+};

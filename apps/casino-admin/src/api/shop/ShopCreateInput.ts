@@ -1,0 +1,32 @@
+import { AccountCreateNestedManyWithoutShopsInput } from "./AccountCreateNestedManyWithoutShopsInput";
+import { BetCreateNestedManyWithoutShopsInput } from "./BetCreateNestedManyWithoutShopsInput";
+import { FishBankWhereUniqueInput } from "../fishBank/FishBankWhereUniqueInput";
+import { GameBankWhereUniqueInput } from "../gameBank/GameBankWhereUniqueInput";
+import { StatGameCreateNestedManyWithoutShopsInput } from "./StatGameCreateNestedManyWithoutShopsInput";
+import { GameCreateNestedManyWithoutShopsInput } from "./GameCreateNestedManyWithoutShopsInput";
+import { OpenShiftCreateNestedManyWithoutShopsInput } from "./OpenShiftCreateNestedManyWithoutShopsInput";
+import { ProductCreateNestedManyWithoutShopsInput } from "./ProductCreateNestedManyWithoutShopsInput";
+import { BalanceTransactionCreateNestedManyWithoutShopsInput } from "./BalanceTransactionCreateNestedManyWithoutShopsInput";
+
+export type ShopCreateInput = {
+  acceptedPaymentMethods?: Array<"CASHAPP" | "INSTORE" | "VENMO" | "CRYPTO">;
+  accounts?: AccountCreateNestedManyWithoutShopsInput;
+  balance: number;
+  bets?: BetCreateNestedManyWithoutShopsInput;
+  code?: string | null;
+  description?: string | null;
+  facialRecognition?: number | null;
+  fishBank?: FishBankWhereUniqueInput | null;
+  gameBank?: GameBankWhereUniqueInput | null;
+  gameStatsAccount?: StatGameCreateNestedManyWithoutShopsInput;
+  games?: GameCreateNestedManyWithoutShopsInput;
+  isActive?: boolean | null;
+  isMfaRequired?: boolean | null;
+  name?: string | null;
+  openShifts?: OpenShiftCreateNestedManyWithoutShopsInput;
+  product?: ProductCreateNestedManyWithoutShopsInput;
+  shopSettingsId?: string | null;
+  tenantId?: string | null;
+  transactions?: BalanceTransactionCreateNestedManyWithoutShopsInput;
+  url?: string | null;
+};
